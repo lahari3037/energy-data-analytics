@@ -1,0 +1,1 @@
+{"statusCode": 500, "body": "{\"error\": \"Float types are not supported. Use Decimal types instead.\"}"}

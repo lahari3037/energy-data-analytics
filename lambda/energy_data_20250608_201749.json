@@ -1,0 +1,68 @@
+[
+  {
+    "site_id": "SITE_001",
+    "timestamp": "2025-06-08T20:17:49.261852Z",
+    "energy_generated_kwh": 140.69,
+    "energy_consumed_kwh": 35.62
+  },
+  {
+    "site_id": "SITE_001",
+    "timestamp": "2025-06-08T20:17:49.261901Z",
+    "energy_generated_kwh": 129.19,
+    "energy_consumed_kwh": 133.41
+  },
+  {
+    "site_id": "SITE_002",
+    "timestamp": "2025-06-08T20:17:49.261919Z",
+    "energy_generated_kwh": 111.38,
+    "energy_consumed_kwh": 5.1
+  },
+  {
+    "site_id": "SITE_002",
+    "timestamp": "2025-06-08T20:17:49.261926Z",
+    "energy_generated_kwh": 196.17,
+    "energy_consumed_kwh": 124.07
+  },
+  {
+    "site_id": "SITE_002",
+    "timestamp": "2025-06-08T20:17:49.261931Z",
+    "energy_generated_kwh": 32.72,
+    "energy_consumed_kwh": 137.49
+  },
+  {
+    "site_id": "SITE_003",
+    "timestamp": "2025-06-08T20:17:49.261940Z",
+    "energy_generated_kwh": -2.46,
+    "energy_consumed_kwh": 94.54
+  },
+  {
+    "site_id": "SITE_004",
+    "timestamp": "2025-06-08T20:17:49.261948Z",
+    "energy_generated_kwh": 78.42,
+    "energy_consumed_kwh": 35.79
+  },
+  {
+    "site_id": "SITE_004",
+    "timestamp": "2025-06-08T20:17:49.261953Z",
+    "energy_generated_kwh": 157.71,
+    "energy_consumed_kwh": 79.29
+  },
+  {
+    "site_id": "SITE_004",
+    "timestamp": "2025-06-08T20:17:49.261959Z",
+    "energy_generated_kwh": 184.99,
+    "energy_consumed_kwh": 146.96
+  },
+  {
+    "site_id": "SITE_005",
+    "timestamp": "2025-06-08T20:17:49.261966Z",
+    "energy_generated_kwh": 177.55,
+    "energy_consumed_kwh": 121.84
+  },
+  {
+    "site_id": "SITE_005",
+    "timestamp": "2025-06-08T20:17:49.261971Z",
+    "energy_generated_kwh": 126.75,
+    "energy_consumed_kwh": 89.12
+  }
+]
