@@ -120,14 +120,10 @@ resource "aws_lambda_function" "data_processor" {
 
   depends_on = [
     aws_iam_role_policy.lambda_policy,
-    aws_cloudwatch_log_group.lambda_logs,
+    aws_cloudwatch_log_group.lambda_logs, 
   ]
 }
 
-resource "aws_cloudwatch_log_group" "lambda_logs" {
-  name              = "/aws/lambda/${var.project_name}-data-processor"
-  retention_in_days = 14
-}
 
 resource "aws_lambda_permission" "allow_s3" {
   statement_id  = "AllowExecutionFromS3Bucket"
@@ -135,4 +131,36 @@ resource "aws_lambda_permission" "allow_s3" {
   function_name = aws_lambda_function.data_processor.function_name
   principal     = "s3.amazonaws.com"
   source_arn    = aws_s3_bucket.energy_data_bucket.arn
+}
+
+resource "aws_cloudwatch_log_metric_filter" "anomaly_filter" {
+  name           = "anomaly-detected"
+  log_group_name = aws_cloudwatch_log_group.lambda_logs.name
+  pattern        = "ANOMALY_DETECTED"
+  
+  metric_transformation {
+    name      = "AnomalyCount"
+    namespace = "EnergyPipeline"
+    value     = "1"
+  }
+}
+
+resource "aws_cloudwatch_log_group" "lambda_logs" {
+  name              = "/aws/lambda/${var.project_name}-data-processor"
+  retention_in_days = 14
+}
+
+resource "aws_cloudwatch_metric_alarm" "anomaly_alarm" {
+  alarm_name          = "energy-anomaly-detected"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = "1"
+  metric_name         = "AnomalyCount"
+  namespace           = "EnergyPipeline"
+  period              = "300"
+  statistic           = "Sum"
+  threshold           = "0"
+  alarm_description   = "This metric monitors energy anomalies"
+  alarm_actions       = []
+  
+  treat_missing_data = "notBreaching"
 }
