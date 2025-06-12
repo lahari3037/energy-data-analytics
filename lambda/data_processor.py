@@ -19,8 +19,6 @@ def convert_float_to_decimal(obj):
        return Decimal(str(obj))
    elif isinstance(obj, dict):
        return {k: convert_float_to_decimal(v) for k, v in obj.items()}
-   elif isinstance(obj, list):
-       return [convert_float_to_decimal(v) for v in obj]
    return obj
 
 def lambda_handler(event, context):
